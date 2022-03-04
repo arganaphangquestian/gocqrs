@@ -1,15 +1,5 @@
 version: '3.3'
 services:
-  client:
-    image: golang:1.17
-    restart: unless-stopped
-    depends_on:
-    - kafka
-    volumes:
-    - .:/app
-    - $GOPATH/pkg/mod:/go/pkg/mod
-    working_dir: /app/client/
-    command: go run main.go
   server:
     image: golang:1.17
     restart: unless-stopped
